@@ -112,7 +112,7 @@ abort() {
   if [[ "${set_lc_all}" == 'true' ]]; then unset LC_ALL; fi
   echo -e "\\n\\n${RED}#########################################################################${RESET}\\n"
   echo -e "${WHITE_R}#${RESET} An error occurred. Aborting script..."
-  echo -e "${WHITE_R}#${RESET} Please contact Glenn R. (AmazedMender16) on the UI Community Forums!"
+  echo -e "${WHITE_R}#${RESET} Deficiente!"
   echo -e "${WHITE_R}#${RESET} UI Community Thread: https://community.ui.com/questions/ccbc7530-dd61-40a7-82ec-22b17f027776 \\n"
   echo -e "${WHITE_R}#${RESET} Creating support file..."
   mkdir -p "/tmp/EUS/support" &> /dev/null
@@ -228,11 +228,11 @@ help_script() {
     --email [argument]                      Specify what email address you want to use
                                             for renewal notifications.
                                             example:
-                                            --email glenn@glennr.nl
+                                            --email matteo@omegatech.it
     --fqdn [argument]                       Specify what domain name ( FQDN ) you want to use, you
                                             can specify multiple domain names with : as seperator, see
                                             the example below:
-                                            --fqdn glennr.nl:www.glennr.nl
+                                            --fqdn test.it:www.test.it
     --server-ip [argument]                  Specify the server IP address manually.
                                             example:
                                             --server-ip 1.1.1.1
@@ -690,15 +690,15 @@ christmass_new_year() {
   date_m=$(date '+%m' | sed "s/^0*//g; s/\.0*/./g")
   if [[ "${date_m}" == '12' && "${date_d}" -ge '18' && "${date_d}" -lt '26' ]]; then
     echo -e "\\n${WHITE_R}----${RESET}\\n"
-    echo -e "${WHITE_R}#${RESET} GlennR wishes you a Merry Christmas! May you be blessed with health and happiness!"
+    echo -e "${WHITE_R}#${RESET} Anche a Natale? Quanto cazzo ti pagano?"
     christmas_message="true"
   fi
   if [[ "${date_m}" == '12' && "${date_d}" -ge '24' && "${date_d}" -le '30' ]]; then
     if [[ "${christmas_message}" != 'true' ]]; then echo -e "\\n${WHITE_R}----${RESET}\\n"; fi
     if [[ "${christmas_message}" == 'true' ]]; then echo -e ""; fi
     date_y=$(date -d "+1 year" +"%Y")
-    echo -e "${WHITE_R}#${RESET} HAPPY NEW YEAR ${date_y}"
-    echo -e "${WHITE_R}#${RESET} May the new year turn all your dreams into reality and all your efforts into great achievements!"
+    echo -e "${WHITE_R}#${RESET} BUON ANNO! ${date_y}"
+    echo -e "${WHITE_R}#${RESET} Anche a Capodanno? Quanto cazzo ti pagano?"
     new_year_message="true"
   elif [[ "${date_m}" == '12' && "${date_d}" == '31' ]]; then
     if [[ "${christmas_message}" != 'true' ]]; then echo -e "\\n${WHITE_R}----${RESET}\\n"; fi
@@ -738,9 +738,9 @@ author() {
   if [[ "${new_year_message}" == 'true' || "${christmas_message}" == 'true' ]]; then echo -e "\\n${WHITE_R}----${RESET}\\n"; fi
   if [[ "${archived_repo}" == 'true' && "${unifi_core_system}" != 'true' ]]; then echo -e "\\n${WHITE_R}----${RESET}\\n\\n${RED}# ${RESET}Looks like you're using a ${RED}EOL/unsupported${RESET} OS Release (${os_codename})\\n${RED}# ${RESET}Please update to a supported release...\\n"; fi
   if [[ "${archived_repo}" == 'true' && "${unifi_core_system}" == 'true' ]]; then echo -e "\\n${WHITE_R}----${RESET}\\n\\n${RED}# ${RESET}Please update to the latest UniFi OS Release!\\n"; fi
-  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Author   |  ${WHITE_R}Glenn R.${RESET}"
-  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Email    |  ${WHITE_R}glennrietveld8@hotmail.nl${RESET}"
-  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Website  |  ${WHITE_R}https://GlennR.nl${RESET}"
+  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Author   |  ${WHITE_R}Matteo Giustini.${RESET}"
+  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Email    |  ${WHITE_R}matteo@omegatech.it${RESET}"
+  echo -e "${WHITE_R}#${RESET} ${GRAY_R}Website  |  ${WHITE_R}https://test.it${RESET}"
   echo -e "\\n\\n"
 }
 
@@ -875,8 +875,8 @@ add_repositories() {
 if ! [[ "${os_codename}" =~ (precise|maya|trusty|qiana|rebecca|rafaela|rosa|xenial|sarah|serena|sonya|sylvia|bionic|tara|tessa|tina|tricia|cosmic|disco|eoan|focal|groovy|hirsute|impish|jammy|kinetic|lunar|mantic|jessie|stretch|continuum|buster|bullseye|bookworm|trixie|forky) ]]; then
   clear
   header_red
-  echo -e "${WHITE_R}#${RESET} This script is not made for your OS.."
-  echo -e "${WHITE_R}#${RESET} Feel free to contact Glenn R. (AmazedMender16) on the Community Forums if you need help with installing your UniFi Network Application."
+  echo -e "${WHITE_R}#${RESET} Questo script non è compatibile con questo OS, usa Ubuntu cialtrone!."
+  echo -e "${WHITE_R}#${RESET} Senti il megamaster Matteo Giustini"
   echo -e ""
   echo -e "OS_CODENAME = ${os_codename}"
   echo -e ""
@@ -896,7 +896,7 @@ if ! grep -iq '^127.0.0.1.*localhost' /etc/hosts; then
           echo -e "${WHITE_R}#${RESET} Adding '127.0.0.1       localhost' to /etc/hosts"
           sed  -i '1i # ------------------------------' /etc/hosts
           sed  -i '1i 127.0.0.1       localhost' /etc/hosts
-          sed  -i '1i # Added by GlennR EUS script' /etc/hosts && echo -e "${WHITE_R}#${RESET} Done..\\n\\n"
+          sed  -i '1i # Added by Matteo Giustini script' /etc/hosts && echo -e "${WHITE_R}#${RESET} Done..\\n\\n"
           sleep 3;;
       [Nn]*) ;;
   esac
@@ -979,8 +979,8 @@ fi
 
 dpkg_locked_message() {
   header_red
-  echo -e "${WHITE_R}#${RESET} dpkg is locked.. Waiting for other software managers to finish!"
-  echo -e "${WHITE_R}#${RESET} If this is everlasting please contact Glenn R. (AmazedMender16) on the Community Forums!\\n\\n"
+  echo -e "${WHITE_R}#${RESET} dpkg bloccato, aspetta che i processi che lo usano siano terminati o terminali a manella!"
+  echo -e "${WHITE_R}#${RESET} Oppure chiedi a Matteo Giustini, se Matteo Giustini sei tu, sei un deficiente!\\n\\n"
   sleep 5
   if [[ -z "$dpkg_wait" ]]; then
     echo "glennr_lock_active" >> /tmp/glennr_lock
@@ -3154,9 +3154,9 @@ if dpkg -l | grep "unifi " | grep -q "^ii\\|^hi"; then
   fi
   echo -e "\\n"
   if [[ "${os_codename}" =~ (precise|maya|trusty|qiana|rebecca|rafaela|rosa) ]]; then
-    if systemctl status unifi | grep -iq running; then echo -e "${GREEN}#${RESET} UniFi is active ( running )"; else echo -e "${RED}#${RESET} UniFi failed to start... Please contact Glenn R. (AmazedMender16) on the Community Forums!"; fi
+    if systemctl status unifi | grep -iq running; then echo -e "${GREEN}#${RESET} UniFi is active ( running )"; else echo -e "${RED}#${RESET} UniFi failed to start... Deficiente"; fi
   else
-    if systemctl is-active -q unifi; then echo -e "${GREEN}#${RESET} UniFi is active ( running )"; else echo -e "${RED}#${RESET} UniFi failed to start... Please contact Glenn R. (AmazedMender16) on the Community Forums!"; fi
+    if systemctl is-active -q unifi; then echo -e "${GREEN}#${RESET} UniFi is active ( running )"; else echo -e "${RED}#${RESET} UniFi failed to start... Deficiente"; fi
   fi
   if [[ "${change_unifi_ports}" == 'true' ]]; then
     echo -e "\\n${WHITE_R}---- ${RED}NOTE${WHITE_R} ----${RESET}\\n\\n${WHITE_R}#${RESET} Your default application port(s) have changed!\\n"
@@ -3191,6 +3191,6 @@ if dpkg -l | grep "unifi " | grep -q "^ii\\|^hi"; then
 else
   header_red
   echo -e "\\n${RED}#${RESET} Failed to successfully install UniFi Network Application ${unifi_clean}"
-  echo -e "${RED}#${RESET} Please contact Glenn R. (AmazedMender16) on the Community Forums!${RESET}\\n\\n"
+  echo -e "${RED}#${RESET} Please retry after checking what's wrong or contact the megamaster Matteo Giustini LOL ${RESET}\\n\\n"
   remove_yourself
 fi
